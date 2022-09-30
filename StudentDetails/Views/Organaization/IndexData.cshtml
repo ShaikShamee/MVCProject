@@ -1,0 +1,102 @@
+﻿
+@model StudentDetails.Models.OrgnazatioRepo
+@{
+    ViewBag.Title = "Home Page";
+}
+<h2>@ViewBag.Message</h2>
+
+<p><b>Teacher List</b></p>
+
+<table>
+    <tr>
+        <th>EmpId</th>
+        <th>EmpName</th>
+        <th>Email</th>
+        <th>PhoneNumber</th>
+        <th>Age</th>
+    </tr>
+    @foreach (ITEmployee itemployees in ViewBag.orgnazations)
+    {
+        <tr>
+            <td>@itemployees.EmpId</td>
+            <td>@itemployees.EmpName</td>
+            <td>@itemployees.Email</td>
+            <td>@itemployees.PhoneNumber</td>
+            <td>@itemployees.Age</td>
+        </tr>
+    }
+</table>
+
+@*<p><b>NonITEmployee List</b></p>
+
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Enrollment No</th>
+        </tr>
+        @foreach (NonITEmployee nonITEmployee in ViewBag.organizations)
+        {
+            <tr>
+                <td>@nonITEmployee.NonEmpId</td>
+                <td>@nonITEmployee.NonEmpName</td>
+                <td>@nonITEmployee.</td>
+                <td>@nonITEmployee.EnrollmentNo</td>
+            </tr>
+        }
+    </table>*@*@
+
+@*@model StudentDetails.Models.Organization
+
+
+    @{
+        ViewBag.Title = "Home Page";
+    }
+    <h2>@ViewBag.Message</h2>
+    <p><b>IT Employess List</b></p>
+    @{
+
+        IEnumerable<ITEmployee> iTEmployees = ViewData["ITEmployees"] as IEnumerable<ITEmployee>;
+        IEnumerable<NonITEmployee> students = ViewData["NonITEmployees"] as IEnumerable<NonITEmployee>;
+    }
+    <table>
+        <tr>
+            <th>EmpId</th>
+            <th>EmpName</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>PhoneNumber</th>
+        </tr>
+        @foreach (ITEmployee employee in iTEmployees)
+        {
+    <tr>
+        <td>@employee.EmpId</td>
+        <td>@employee.EmpName</td>
+        <td>
+            @employee.Email
+    </td>
+    <td>@employee.PhoneNumber</td>
+    <td>@employee.Age</td>
+    </tr>
+        }
+    </table>
+    <p><b>Student List</b></p>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Enrollment No</th>
+        </tr>
+        @foreach (Student student in students)
+        {
+            <tr>
+                <td>@student.StudentId</td>
+                <td>@student.Code</td>
+                <td>@student.Name</td>
+                <td>@student.EnrollmentNo</td>
+            </tr>
+        }
+    </table>*@
+

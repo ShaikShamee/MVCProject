@@ -1,0 +1,73 @@
+﻿@model IEnumerable<DBFirstApproach.Models.CustomerTable>
+
+@{
+    ViewData["Title"] = "GetAllCustomers";
+    Pager pager = new Pager();
+    int pageNo = 0;
+    if (ViewBag.Pager != null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
+}
+<style>
+    .avatar {
+        vertical-align: middle;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+</style>
+
+<h1>GetAllCustomers</h1>
+
+<p>
+    <a asp-action="AddCustomers" class="btn btn-sm btn-success ml-1">Create New</a>
+</p>
+<partial name="_Pagination" model="@pager" />
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                UserProfile
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LatName)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNo)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <img src="@item.PhotoUrl" alt="" class="avatar" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LatName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNo)
+            </td>
+            <td>
+                <div class="btn-group">
+                    <a asp-action="EditCustomerDetails" asp-route-id="@item.CustId" class="btn btn-sm btn-info">Edit</a>
+                    <a asp-action="GetCustomerDetails" asp-route-id="@item.CustId" class="btn btn-sm btn-primary ml-1">Details</a>
+                    <a asp-action="DeleteCustomerDetails" asp-route-id="@item.CustId" class="btn btn-sm btn-danger ml-1">Delete</a>
+                </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<partial name="_Pagination" model="@pager" />

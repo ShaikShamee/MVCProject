@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title-SchoolManagement</title>
+    <link  rel="stylesheet" href="~/css/Styles.css"/>
+</head>
+<body>
+    <div>
+   <table  border="2" align="center" cellpadding="5" cellspacing="5">
+       <tr id="row">
+           <td colspan="2">Bhavna|Hyderabad</td>
+       </tr>
+       <tr height="300">
+           <td width="250" id="links">
+               <ul>
+                   <li>@Html.ActionLink("Home", "Home")</li>
+                   <li>@Html.ActionLink("ContactUs", "ContactUs")</li>
+                   <li>@Html.ActionLink("Register", "Register")</li>
+                   <li>@Html.ActionLink("SignUp", "SignUp")</li>
+               </ul>
+           </td>
+           <td id="content">
+               @RenderBody()
+           </td>
+       </tr>
+       <tr>
+           <td id="footer"colspan="2">
+               &copy; copyright 2013
+               Employees|Projects|Developments
+           </td>
+       </tr>
+       
+   </table>
+    </div>
+</body>
+</html>

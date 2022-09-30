@@ -1,0 +1,48 @@
+﻿
+@model StudentDetails.Models.Organization
+@{
+    ViewBag.Title = "Home Page";
+}
+<h2>@ViewBag.Message</h2>
+
+<p><b>Teacher List</b></p>
+
+<table>
+    <tr>
+        <th>EmpId</th>
+        <th>EmpName</th>
+        <th>Email</th>
+        <th>PhoneNumber</th>
+        <th>Age</th>
+    </tr>
+    @foreach (ITEmployee teacher in Model.ITEmployees)
+    {
+<tr>
+    <td>@teacher.EmpId</td>
+    <td>@teacher.EmpName</td>
+    <td>@teacher.Email</td>
+    <td>@teacher.PhoneNumber</td>
+    <td>@teacher.Age</td>
+</tr>
+    }
+</table>
+
+@*<p><b>Student List</b></p>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Enrollment No</th>
+    </tr>
+    @foreach (Student student in ViewBag.Students)
+    {
+        <tr>
+            <td>@student.StudentId</td>
+            <td>@student.Code</td>
+            <td>@student.Name</td>
+            <td>@student.EnrollmentNo</td>
+        </tr>
+    }
+</table>*@

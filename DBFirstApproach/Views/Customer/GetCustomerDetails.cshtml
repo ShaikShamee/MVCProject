@@ -1,0 +1,42 @@
+﻿@model DBFirstApproach.Models.CustomerTable
+
+@{
+    ViewData["Title"] = "GetCustomerDetails";
+}
+
+<h1>GetCustomerDetails</h1>
+
+<div>
+    <h4>CustomerTable</h4>
+    <hr />
+    <dl class="row">
+        <div>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LatName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LatName)
+        </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.PhoneNo)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.PhoneNo)
+    </dd>
+</div>
+<div class="col-8">
+    <img src="@Model.PhotoUrl" class="img-fluid" />
+</div>
+
+</dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CustId">Edit</a> |
+    <a asp-action="GetAllCustomers">Back to List</a>
+</div>

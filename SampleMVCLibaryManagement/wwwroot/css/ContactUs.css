@@ -1,0 +1,43 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+#service {
+    margin: 34px;
+    display: flex;
+}
+body{
+    background-color:darkkhaki;
+}
+   
+h1 {
+        text-align:center;
+        background-color:coral;
+        justify-content:center;
+}
+
+ #service div {
+        padding: 45px;
+        margin: 3px 6px;
+        border-radius: 28px;
+    }
+
+    #service div p {
+        text-align: center;
+        font-family: sans-serif;
+        color:Highlight;
+    }
+
+.text-footer {
+    text-align: center;
+    padding: 30px 0;
+    font-family: "Ubuntu", sans-serif;
+    display: flex;
+    justify-content: center;
+}
+.background {
+    background-color: grey;
+    background-size: cover;
+}
+
